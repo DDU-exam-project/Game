@@ -302,6 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   rb: {fileID: 1517043702}
+  animator: {fileID: 1517043703}
 --- !u!50 &1517043702
 Rigidbody2D:
   serializedVersion: 4
@@ -333,7 +334,7 @@ Animator:
   m_GameObject: {fileID: 1517043698}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2ec04891561b13457bb16903f9346007, type: 2}
+  m_Controller: {fileID: 9100000, guid: 04a800b37720b9f30899d969ecd98b97, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
