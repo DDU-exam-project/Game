@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class TestEnemy : MonoBehaviour {
 
+    public Rigidbody2D rb;
+    public GameObject player;
     public float moveSpeed = 5f;
     public float minDist = 2f;
     public float maxDist = 2f;
 
-    public Rigidbody2D rb;
-
-    GameObject player;
 
     private bool spottedPlayer = false;
 
@@ -18,7 +17,7 @@ public class TestEnemy : MonoBehaviour {
     void Update() {
 
         // Find player object
-        player = GameObject.FindGameObjectWithTag("Player");
+        //player = GameObject.FindGameObjectWithTag("Player");
 
         // If player is whitind maxDist, then player is spotted
         if (!spottedPlayer & Vector2.Distance(rb.transform.position, player.transform.position) <= maxDist) spottedPlayer = true;
