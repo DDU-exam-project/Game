@@ -8,6 +8,7 @@ public class OptionsMenuScript : MonoBehaviour
 {
     [SerializeField] AudioMixer master;
     [SerializeField] TMP_Dropdown resolutionDropdown;
+    [SerializeField] TMP_Dropdown qualityDropdown;
 
     Resolution[] resolutions;
 
@@ -30,6 +31,12 @@ public class OptionsMenuScript : MonoBehaviour
             }
         }
         resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+
+        qualityDropdown.value = QualitySettings.GetQualityLevel();
+        qualityDropdown.RefreshShownValue();
+
     }
 
     public void SetVolume(float volume)
@@ -40,6 +47,12 @@ public class OptionsMenuScript : MonoBehaviour
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution res = resolutions[resolutionIndex];
+        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
     }
 
     public void ToggleFullscreen(bool isFullscreen)
