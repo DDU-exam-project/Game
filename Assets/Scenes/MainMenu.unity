@@ -2388,6 +2388,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   master: {fileID: 24100000, guid: 435afdd6c1972024e88f8b7dbc51cc61, type: 2}
+  resolutionDropdown: {fileID: 1190124597}
+  qualityDropdown: {fileID: 964860396}
 --- !u!1 &1101071743
 GameObject:
   m_ObjectHideFlags: 0
@@ -2687,7 +2689,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1079944793}
+        m_MethodName: SetResolution
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1190124598
 MonoBehaviour:
   m_ObjectHideFlags: 0
