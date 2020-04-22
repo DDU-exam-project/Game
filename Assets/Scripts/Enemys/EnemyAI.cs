@@ -66,9 +66,10 @@ public class EnemyAI : MonoBehaviour
             return;
 
         
-        //Debug.Log(Vector2.Distance(rb.position, target.position));
+        // Test if enemy is within attack distance
         if (Vector2.Distance(rb.position, target.position) <= attackDistance) {
-            Debug.LogWarning("ATTACK");
+            //Debug.LogWarning("ATTACK");
+            //Debug.Log(Vector2.Distance(rb.position, target.position));
             return;
 
         }
