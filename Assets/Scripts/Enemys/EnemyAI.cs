@@ -12,6 +12,9 @@ public class EnemyAI : MonoBehaviour
     // Enemy speed
     public float speed = 200f;
 
+    // Minimum attack distance
+    public float attackDistance = 10f;
+
     // Minimum distance to complete way point
     public float nextWaypointDistance = 3;
 
@@ -61,6 +64,15 @@ public class EnemyAI : MonoBehaviour
         // If there is no path then return
         if (path == null) 
             return;
+
+        
+        //Debug.Log(Vector2.Distance(rb.position, target.position));
+        if (Vector2.Distance(rb.position, target.position) <= attackDistance) {
+            Debug.LogWarning("ATTACK");
+            return;
+
+        }
+
 
         // Test if at end of path
         if (currentWaypoint >= path.vectorPath.Count) {
