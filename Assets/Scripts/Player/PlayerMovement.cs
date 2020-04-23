@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -11,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
 
     Vector2 movement;
+    bool canMove = true;
 
     private void OnEnable()
     {
@@ -22,9 +21,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // Input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
-
+        movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        
         if (movement.sqrMagnitude!=0)
         {
             animator.SetFloat("Horizontal", movement.x);
