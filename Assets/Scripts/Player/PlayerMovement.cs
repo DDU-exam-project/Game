@@ -22,8 +22,14 @@ public class PlayerMovement : MonoBehaviour
     {
         // Input
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        if (Input.GetButtonDown("Fire3"))
+        {
+            animator.SetTrigger("Attack");
+
+            canMove = false;
+        }
         
-        if (movement.sqrMagnitude!=0)
+        if (movement.sqrMagnitude!=0 && canMove)
         {
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
@@ -34,7 +40,15 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate() 
     {
         // Movment
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (canMove)
+        {
+            rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
+        }       
 
+    }
+
+    public void OnAttackEnd()
+    {
+        canMove = true;
     }
 }

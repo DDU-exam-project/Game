@@ -15,7 +15,7 @@ public class CharacterScript : MonoBehaviour
 
     private void OnEnable()
     {
-        currentHealth = MaxHealth;
+        currentHealth = maxHealth;
     }
   
 
