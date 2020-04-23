@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
 public class CharacterScript : MonoBehaviour
 {
     [SerializeField] int maxHealth = 10;
@@ -25,7 +24,7 @@ public class CharacterScript : MonoBehaviour
         if (currentHealth <= 0)
         {
             isAlive = false;
-            GetComponent<Animator>().SetBool("IsAlive", false);
+            
         }
     }
 

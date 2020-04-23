@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
-
-    public Rigidbody2D rb;
     public Animator animator;
 
+    [HideInInspector] public bool canMove = true;
+
     Vector2 movement;
-    bool canMove = true;
+    Rigidbody2D rb;
+
 
     private void OnEnable()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,10 +46,5 @@ public class PlayerMovement : MonoBehaviour
             rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
         }       
 
-    }
-
-    public void OnAttackEnd()
-    {
-        canMove = true;
     }
 }
