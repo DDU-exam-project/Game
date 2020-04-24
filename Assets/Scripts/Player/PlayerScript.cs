@@ -31,6 +31,8 @@ public class PlayerScript : CharacterScript
     {
         CurrentHealth -= amount;
         HealthBarScript.UpdateHealthBar(CurrentHealth);
+        WasHit = true;
+        StartCoroutine(HurtCoroutine());
     }
 
     private void Update()
