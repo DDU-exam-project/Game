@@ -9,6 +9,9 @@ public class EnemyAI : MonoBehaviour
     // Enemy target
     public Transform target;
 
+    // Enemy animator
+    public Animator animator;
+
     // Enemy speed
     public float speed = 200f;
 
@@ -26,7 +29,8 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-
+    Vector2 force;
+    Vector2 direction;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +45,6 @@ public class EnemyAI : MonoBehaviour
         // 2) The delay before first call
         // 3) repeat every x seconds
         InvokeRepeating("UpdatePath", 0f, 0.5f);
-        
     }
 
 
@@ -59,6 +62,30 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    void Update() {
+        //if (force.x > 0) {
+        //    animator.SetFloat("Horizontal", force.x);
+        //} else {
+        //    animator.SetFloat("Horizontal", rb.velocity.x);
+        //}
+
+        //if (force.y > 0) {
+        //    animator.SetFloat("Horizontal", force.y);
+        //} else {
+        //    animator.SetFloat("Horizontal", rb.velocity.y);
+        //}
+
+        //animator.SetFloat("Horizontal", rb.velocity.x);
+        //animator.SetFloat("Vertical", rb.velocity.y);
+        //animator.SetFloat("Speed", 1);
+        //animator.SetFloat("Horizontal", direction.x);
+        //animator.SetFloat("Vertical", direction.y);
+        animator.SetFloat("Horizontal", rb.velocity.x);
+        animator.SetFloat("Vertical", rb.velocity.y);
+        animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
+        //Debug.Log(rb.velocity.sqrMagnitude);
+
+    }
     void FixedUpdate()
     {
         // If there is no path then return
@@ -84,12 +111,14 @@ public class EnemyAI : MonoBehaviour
         }
 
         // Calculate a normalized vector ind the direaction of path
-        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         // Calculate the force to add to enemy
-        Vector2 force = direction * speed * Time.fixedDeltaTime;
+        //Vector2 force = direction * speed * Time.fixedDeltaTime;
+        force = direction * speed * Time.deltaTime;
 
         // Addeds force to enemy
-        rb.AddForce(force);
+        //rb.AddForce(force);
+        rb.velocity = force;
 
         // Calculate distance between enemy and next way point
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
