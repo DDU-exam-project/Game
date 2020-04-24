@@ -6,11 +6,15 @@ public class CharacterScript : MonoBehaviour
 {
     [SerializeField] int maxHealth = 10;
     int currentHealth = 0;
+    bool isAlive = true;
+    bool wasHit = false;
 
     public int MaxHealth { get => maxHealth; }
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
+    public bool WasHit { get => wasHit; set => wasHit = value; }
     
-    bool isAlive = true;
+    
+    
 
     private void OnEnable()
     {
@@ -31,5 +35,6 @@ public class CharacterScript : MonoBehaviour
     public virtual void TakeDamage(int amount)
     {
         currentHealth -= amount;
+        wasHit = true;
     }
 }
