@@ -318,8 +318,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4332129334875715107}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1129736379
+  m_SortingLayer: 4
   m_SortingOrder: 0
 --- !u!1 &4332129334886653519
 GameObject:
@@ -453,7 +453,7 @@ GameObject:
   - component: {fileID: 4332129334925174316}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  hurtTime: 0.3
 --- !u!50 &4332129334925174307
 Rigidbody2D:
   serializedVersion: 4

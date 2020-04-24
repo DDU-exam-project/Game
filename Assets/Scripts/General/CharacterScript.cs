@@ -29,7 +29,7 @@ public class CharacterScript : MonoBehaviour
         if (currentHealth <= 0)
         {
             isAlive = false;
-            Debug.Log("died");
+            this.enabled = false;
         }
     }
 
