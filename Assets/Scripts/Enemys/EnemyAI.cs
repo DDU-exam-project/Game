@@ -45,8 +45,8 @@ public class EnemyAI : MonoBehaviour
         // 2) The delay before first call
         // 3) repeat every x seconds
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+        //StartCoroutine(UpdatePath());
     }
-
 
     // Calculate a new path to player
     void UpdatePath() {
@@ -63,6 +63,7 @@ public class EnemyAI : MonoBehaviour
     }
 
     void Update() {
+
         //if (force.x > 0) {
         //    animator.SetFloat("Horizontal", force.x);
         //} else {
@@ -80,10 +81,9 @@ public class EnemyAI : MonoBehaviour
         //animator.SetFloat("Speed", 1);
         //animator.SetFloat("Horizontal", direction.x);
         //animator.SetFloat("Vertical", direction.y);
-        animator.SetFloat("Horizontal", rb.velocity.x);
-        animator.SetFloat("Vertical", rb.velocity.y);
-        animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
-        //Debug.Log(rb.velocity.sqrMagnitude);
+		animator.SetFloat("Horizontal", rb.velocity.x);
+		animator.SetFloat("Vertical", rb.velocity.y);
+		animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
 
     }
     void FixedUpdate()
