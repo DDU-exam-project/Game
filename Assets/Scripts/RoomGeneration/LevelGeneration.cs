@@ -8,7 +8,7 @@ public class LevelGeneration : MonoBehaviour {
 	Vector2 worldSize = new Vector2(4, 4);
 	Room[,] rooms;
 	List<Vector2> takenPositions = new List<Vector2>();
-	int gridSizeX, gridSizeY, numberOfRooms = 20;
+	int gridSizeX, gridSizeY, numberOfRooms = 2;
 	[SerializeField] List<GameObject> roomTemplates;
 	void Start () {
 		if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2)){ // make sure we dont try to make more rooms than can fit in our grid
@@ -132,24 +132,20 @@ public class LevelGeneration : MonoBehaviour {
 	{
 		foreach (Room room in rooms)
 		{
-			if (room == null)
-			{
-				continue; //skip where there is no room
-			}
-			int count = 0;
+			if (room == null) continue; //skip where there is no room
+			
 			room.makeTag();
 			Vector2 drawPos = room.gridPos;
 			drawPos.x *= 1 * 16;//aspect ratio of map sprite
 			drawPos.y *= 1 * 16;
 			foreach (GameObject roomTemplate in roomTemplates)
 			{
-				UnityEngine.Debug.Log(count.ToString() + ": " + room.tag + " and " + roomTemplate.tag);
-				count++;
-				if (roomTemplate.CompareTag(room.tag))
-				{
-					Instantiate(roomTemplate, drawPos, Quaternion.identity);
-				}
-			}
+                if (roomTemplate.CompareTag(room.tag))
+                {
+                    roomTemplate.GetComponentInChildren<OnTriggerMoveTo>().roomPosition = room.gridPos;
+                    Instantiate(roomTemplate, drawPos, Quaternion.identity);
+                }
+            }
 		}
 	}
 
