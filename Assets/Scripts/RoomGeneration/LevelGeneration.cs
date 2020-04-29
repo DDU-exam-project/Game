@@ -1,14 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class LevelGeneration : MonoBehaviour {
-	Vector2 worldSize = new Vector2(4,4);
+	Vector2 worldSize = new Vector2(4, 4);
 	Room[,] rooms;
 	List<Vector2> takenPositions = new List<Vector2>();
 	int gridSizeX, gridSizeY, numberOfRooms = 20;
-	public GameObject roomWhiteObj;
-	public Transform mapRoot;
+	[SerializeField] List<GameObject> roomTemplates;
 	void Start () {
 		if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2)){ // make sure we dont try to make more rooms than can fit in our grid
 			numberOfRooms = Mathf.RoundToInt((worldSize.x * 2) * (worldSize.y * 2));
@@ -17,19 +18,18 @@ public class LevelGeneration : MonoBehaviour {
 		gridSizeY = Mathf.RoundToInt(worldSize.y);
 		CreateRooms(); //lays out the actual map
 		SetRoomDoors(); //assigns the doors where rooms would connect
-		DrawMap(); //instantiates objects to make up a map
-		GetComponent<SheetAssigner>().Assign(rooms); //passes room info to another script which handles generatating the level geometry
+		DrawMap();
 	}
 	void CreateRooms(){
 		//setup
 		rooms = new Room[gridSizeX * 2,gridSizeY * 2];
-		rooms[gridSizeX,gridSizeY] = new Room(Vector2.zero, 1);
-		takenPositions.Insert(0,Vector2.zero);
+		rooms[gridSizeX, gridSizeY] = new Room(Vector2.zero, 1);
+		takenPositions.Insert(0, Vector2.zero);
 		Vector2 checkPos = Vector2.zero;
 		//magic numbers
 		float randomCompare = 0.2f, randomCompareStart = 0.2f, randomCompareEnd = 0.01f;
 		//add rooms
-		for (int i =0; i < numberOfRooms -1; i++){
+		for (int i = 0; i < numberOfRooms -1; i++){
 			float randomPerc = ((float) i) / (((float)numberOfRooms - 1));
 			randomCompare = Mathf.Lerp(randomCompareStart, randomCompareEnd, randomPerc);
 			//grab new position
@@ -40,7 +40,7 @@ public class LevelGeneration : MonoBehaviour {
 				do{
 					checkPos = SelectiveNewPosition();
 					iterations++;
-				}while(NumberOfNeighbors(checkPos, takenPositions) > 1 && iterations < 100);
+				} while(NumberOfNeighbors(checkPos, takenPositions) > 1 && iterations < 100);
 				if (iterations >= 50)
 					print("error: could not create with fewer neighbors than : " + NumberOfNeighbors(checkPos, takenPositions));
 			}
@@ -127,24 +127,32 @@ public class LevelGeneration : MonoBehaviour {
 		}
 		return ret;
 	}
-	void DrawMap(){
-		foreach (Room room in rooms){
-			if (room == null){
+
+	void DrawMap()
+	{
+		foreach (Room room in rooms)
+		{
+			if (room == null)
+			{
 				continue; //skip where there is no room
 			}
+			int count = 0;
+			room.makeTag();
 			Vector2 drawPos = room.gridPos;
-			drawPos.x *= 16;//aspect ratio of map sprite
-			drawPos.y *= 8;
-			//create map obj and assign its variables
-			MapSpriteSelector mapper = Object.Instantiate(roomWhiteObj, drawPos, Quaternion.identity).GetComponent<MapSpriteSelector>();
-			mapper.type = room.type;
-			mapper.up = room.doorTop;
-			mapper.down = room.doorBot;
-			mapper.right = room.doorRight;
-			mapper.left = room.doorLeft;
-			mapper.gameObject.transform.parent = mapRoot;
+			drawPos.x *= 1 * 16;//aspect ratio of map sprite
+			drawPos.y *= 1 * 16;
+			foreach (GameObject roomTemplate in roomTemplates)
+			{
+				UnityEngine.Debug.Log(count.ToString() + ": " + room.tag + " and " + roomTemplate.tag);
+				count++;
+				if (roomTemplate.CompareTag(room.tag))
+				{
+					Instantiate(roomTemplate, drawPos, Quaternion.identity);
+				}
+			}
 		}
 	}
+
 	void SetRoomDoors(){
 		for (int x = 0; x < ((gridSizeX * 2)); x++){
 			for (int y = 0; y < ((gridSizeY * 2)); y++){
