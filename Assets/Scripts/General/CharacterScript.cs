@@ -12,6 +12,7 @@ public class CharacterScript : MonoBehaviour
     public int MaxHealth { get => maxHealth; }
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public bool WasHit { get => wasHit; set => wasHit = value; }
+    public bool IsAlive { get => isAlive; }
     public float HurtTime { get => hurtTime; set => hurtTime = value; }
     
     
@@ -29,7 +30,7 @@ public class CharacterScript : MonoBehaviour
         if (currentHealth <= 0)
         {
             isAlive = false;
-            this.enabled = false;
+            enabled = false;
         }
     }
 

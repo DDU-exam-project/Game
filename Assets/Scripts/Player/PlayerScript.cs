@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerScript : CharacterScript
 {
+    [SerializeField] float timeBeforeRestart = 1f;
+    PlayerMovement movementScript;
 
-    Scene currentScene;
     static PlayerScript player;
     private void Awake()
     {
@@ -23,7 +25,7 @@ public class PlayerScript : CharacterScript
     {
         SceneManager.activeSceneChanged += OnSceneChangeHealthBarUpdate;
         HealthBarScript.InitializeHealthBar(MaxHealth);
-        currentScene = SceneManager.GetActiveScene();
+        movementScript = GetComponent<PlayerMovement>();
     }
 
     override
@@ -48,6 +50,19 @@ public class PlayerScript : CharacterScript
                 SceneManager.UnloadSceneAsync("PauseMenu");
             }
         }
+        if (IsAlive)
+        {
+            StartCoroutine(gameOverCoroutine());
+            SceneManager.LoadSceneAsync("GameOverScreen", LoadSceneMode.Additive);
+            movementScript.enabled = false;
+        }
+    }
+
+    IEnumerator gameOverCoroutine()
+    {
+        yield return new WaitForSeconds(timeBeforeRestart);
+        SceneManager.UnloadSceneAsync("GameOverScreen");
+        SceneManager.LoadScene("HubScene");
     }
 
     void OnSceneChangeHealthBarUpdate(Scene current, Scene next)
