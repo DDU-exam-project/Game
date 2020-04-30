@@ -1,12 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Cinemachine;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    [SerializeField] CinemachineVirtualCamera cam;
 
     static CameraScript instance;
     
+    public static CameraScript Instance { get => instance; }
     private void Awake()
     {
         if (instance == null)

@@ -42,19 +42,29 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        if (SceneManager.GetSceneByName("GameOverScreen").isLoaded == false)
-        {
-            SceneManager.LoadSceneAsync("GameOverScreen", LoadSceneMode.Additive);
-        }
+        StartCoroutine(GameOverAsyncLoad());
+        CameraScript.Instance.gameObject.transform.position = Vector3.zero;
+        PlayerScript.player.gameObject.transform.position = Vector3.zero;
+
         SceneManager.UnloadSceneAsync("HealthBarUI");
         Invoke("RestartGame", timeBeforeRestart);
     }
 
     void RestartGame()
     {
-        SceneManager.UnloadSceneAsync("GameOverScreen");
         Destroy(PlayerScript.player.gameObject);
+        Destroy(CameraScript.Instance.gameObject);
         SceneManager.LoadScene("HubScene");
         SceneManager.LoadSceneAsync("HealthBarUI", LoadSceneMode.Additive);
+    }
+    
+    IEnumerator GameOverAsyncLoad()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("GameOverScreen");
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
+        CameraScript.Instance.gameObject.SetActive(false);
     }
 }
