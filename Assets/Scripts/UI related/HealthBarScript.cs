@@ -6,22 +6,36 @@ public class HealthBarScript : MonoBehaviour
 {
 
     static Slider slider;
+    PlayerScript player;
 
     private void Awake()
     {
         slider = GetComponent<Slider>();
+        
     }
-
-    public static void InitializeHealthBar(int maxHealth)
+    private void OnEnable()
     {
-        slider.maxValue = maxHealth;
-        slider.value = maxHealth;
+        player = PlayerScript.player;
+        InitializeHealthBar();
     }
-
-    public static void UpdateHealthBar(int currentHealth)
+    private void OnDisable()
     {
-        slider.value = currentHealth;
+        player = null;
     }
 
-    
+    void InitializeHealthBar()
+    {
+        slider.maxValue = player.MaxHealth;
+        slider.value = player.MaxHealth;
+    }
+
+    private void Update()
+    {
+        if (slider.value != player.CurrentHealth)
+        {
+            slider.value = player.CurrentHealth;
+        }
+    }
+
+
 }

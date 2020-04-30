@@ -844,7 +844,7 @@ PrefabInstance:
     - target: {fileID: 7550826410394802139, guid: ef4556906a5717d42b3dc3d85b4221c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7550826410394802139, guid: ef4556906a5717d42b3dc3d85b4221c7,
         type: 3}
@@ -910,6 +910,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7550826411144272835, guid: ef4556906a5717d42b3dc3d85b4221c7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1978974017}
+    - target: {fileID: 7550826411144272835, guid: ef4556906a5717d42b3dc3d85b4221c7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnOptionsOpenClose
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef4556906a5717d42b3dc3d85b4221c7, type: 3}
