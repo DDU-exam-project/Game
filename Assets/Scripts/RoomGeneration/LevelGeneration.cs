@@ -7,7 +7,9 @@ using UnityEngine.UIElements;
 public class LevelGeneration : MonoBehaviour {
 	Vector2 worldSize = new Vector2(4, 4);
 	Room[,] rooms;
-	List<Vector2> takenPositions = new List<Vector2>();
+    List<GameObject> roomGameObjects;
+    List<Vector2> takenPositions = new List<Vector2>();
+    [SerializeField] int roomSize;
 	int gridSizeX, gridSizeY, numberOfRooms = 2;
 	[SerializeField] List<GameObject> roomTemplates;
 	void Start () {
@@ -136,18 +138,20 @@ public class LevelGeneration : MonoBehaviour {
 			
 			room.makeTag();
 			Vector2 drawPos = room.gridPos;
-			drawPos.x *= 1 * 16;//aspect ratio of map sprite
-			drawPos.y *= 1 * 16;
-			foreach (GameObject roomTemplate in roomTemplates)
+			drawPos.x *= 1 * roomSize;//aspect ratio of map sprite
+			drawPos.y *= 1 * roomSize;
+            Vector2 currentPos = room.gridPos;
+            foreach (GameObject roomTemplate in roomTemplates)
 			{
                 if (roomTemplate.CompareTag(room.tag))
                 {
                     roomTemplate.GetComponentInChildren<OnTriggerMoveTo>().roomPosition = room.gridPos;
+                    roomTemplate.GetComponent<GridPosition>().gridPos = room.gridPos;
                     Instantiate(roomTemplate, drawPos, Quaternion.identity);
                 }
             }
 		}
-	}
+    }
 
 	void SetRoomDoors(){
 		for (int x = 0; x < ((gridSizeX * 2)); x++){

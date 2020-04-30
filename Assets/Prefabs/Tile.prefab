@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8417149202579649028}
   - component: {fileID: 2192567956782827052}
+  - component: {fileID: 4209955325426799824}
   m_Layer: 0
-  m_Name: DoorB
+  m_Name: B
   m_TagString: B
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +44,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46704e9badb7fbf4b945b0410f823212, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newPosition: {x: 0, y: 0}
+  roomPosition: {x: 0, y: 0}
+--- !u!61 &4209955325426799824
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6939452162562088695}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &8310733404947055766
 GameObject:
   m_ObjectHideFlags: 0
@@ -54,7 +81,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1239305013630564616}
   - component: {fileID: 6880177043739021532}
-  - component: {fileID: 8286898474849131539}
+  - component: {fileID: -4080823794833741546}
   m_Layer: 0
   m_Name: Tile
   m_TagString: B
@@ -127,29 +154,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &8286898474849131539
-BoxCollider2D:
+--- !u!114 &-4080823794833741546
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8310733404947055766}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 16, y: 16}
-    newSize: {x: 16, y: 16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 16, y: 16}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c6b8ef7f114a841b47b534d5148b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridPos: {x: 0, y: 0}
