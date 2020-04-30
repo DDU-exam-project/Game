@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
     void RestartGame()
     {
         Destroy(PlayerScript.player.gameObject);
-        Destroy(CameraScript.Instance.gameObject);
+        
         SceneManager.LoadScene("HubScene");
         SceneManager.LoadSceneAsync("HealthBarUI", LoadSceneMode.Additive);
     }
@@ -65,6 +65,6 @@ public class GameManager : MonoBehaviour
         {
             yield return null;
         }
-        CameraScript.Instance.gameObject.SetActive(false);
+        Destroy(CameraScript.Instance.gameObject);
     }
 }

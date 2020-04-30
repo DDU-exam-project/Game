@@ -179,9 +179,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.106993675}
   serializedVersion: 2
-  m_Radius: 0.81292516
+  m_Radius: 0.9199188
 --- !u!1 &302247808
 GameObject:
   m_ObjectHideFlags: 0
@@ -373,7 +373,7 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.14791632, y: 0}
   serializedVersion: 2
   m_Radius: 0.81292516
 --- !u!1 &793210332
@@ -482,9 +482,19 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.00000023841858
       objectReference: {fileID: 0}
+    - target: {fileID: 148504423703680610, guid: 3ca1f6293ee740e419782d8f06a2e015,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00000023841858
+      objectReference: {fileID: 0}
     - target: {fileID: 148504424958786539, guid: 3ca1f6293ee740e419782d8f06a2e015,
         type: 3}
       propertyPath: m_LocalPosition.y
+      value: -0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 148504424958786539, guid: 3ca1f6293ee740e419782d8f06a2e015,
+        type: 3}
+      propertyPath: m_LocalPosition.x
       value: -0.00000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 148504424958786540, guid: 3ca1f6293ee740e419782d8f06a2e015,
@@ -967,10 +977,11 @@ GameObject:
   - component: {fileID: 1759202478}
   - component: {fileID: 1759202477}
   - component: {fileID: 1759202476}
-  - component: {fileID: 1759202481}
   - component: {fileID: 1759202480}
   - component: {fileID: 1759202479}
   - component: {fileID: 1759202475}
+  - component: {fileID: 1759202481}
+  - component: {fileID: 1759202482}
   m_Layer: 0
   m_Name: Minion
   m_TagString: Untagged
@@ -1129,8 +1140,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1759202481
-BoxCollider2D:
+--- !u!58 &1759202481
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1142,19 +1153,24 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
-    newSize: {x: 2, y: 2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Offset: {x: -0.03125, y: -0.36}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.25090784
+--- !u!114 &1759202482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759202474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1115c69934f0b4cb223b0b61d588af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  hurtTime: 0.3
+  stayAfterDeathTime: 10
 --- !u!1 &1772559889
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,16 +1871,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4332129334875715105, guid: 448570d9b8111af4c9c7377f06b7b4a6,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 1129736379
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332129334875715105, guid: 448570d9b8111af4c9c7377f06b7b4a6,
-        type: 3}
-      propertyPath: m_SortingLayer
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4332129334925174305, guid: 448570d9b8111af4c9c7377f06b7b4a6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1924,11 +1930,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4332129334925174318, guid: 448570d9b8111af4c9c7377f06b7b4a6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 448570d9b8111af4c9c7377f06b7b4a6, type: 3}

@@ -33,6 +33,7 @@ public class PlayerScript : CharacterScript
         {
             movementScript.animator.SetTrigger("Die");
             GameManager.Instance.EndGame();
+            return;
         }
         
         StartCoroutine(HurtCoroutine());

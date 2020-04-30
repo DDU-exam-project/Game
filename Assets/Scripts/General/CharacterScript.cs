@@ -5,6 +5,7 @@ public class CharacterScript : MonoBehaviour
 {
     [SerializeField] int maxHealth = 10;
     [SerializeField] float hurtTime = 0.3f;
+    
     int currentHealth = 0;
     
     bool wasHit = false;
@@ -13,9 +14,7 @@ public class CharacterScript : MonoBehaviour
     public int CurrentHealth { get => currentHealth; set => currentHealth = value; }
     public bool WasHit { get => wasHit; set => wasHit = value; }   
     public float HurtTime { get => hurtTime; set => hurtTime = value; }
-    
-    
-    
+      
 
     private void OnEnable()
     {
@@ -27,6 +26,7 @@ public class CharacterScript : MonoBehaviour
     {
         currentHealth -= amount;
         wasHit = true;
+        
         StartCoroutine(HurtCoroutine());
     }
 
@@ -35,4 +35,5 @@ public class CharacterScript : MonoBehaviour
         yield return new WaitForSeconds(hurtTime);
         wasHit = false;
     }
+    
 }
