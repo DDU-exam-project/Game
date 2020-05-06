@@ -4,28 +4,25 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 2208703988740019828
-    second: Bullet_0
+    second: Travel00
   - first:
       213: 4385501425044414559
-    second: Bullet_1
+    second: Travel01
   - first:
       213: 3029603797402824116
-    second: Bullet_2
+    second: Travel02
   - first:
       213: -3300396339194205850
-    second: Impact_0
+    second: Hit00
   - first:
       213: 1595849069685491311
-    second: Impact_1
+    second: Hit01
   - first:
       213: 2281616994717487372
-    second: Impact_2
+    second: Hit02
   - first:
       213: -7715894896725399453
-    second: Impact_3
-  - first:
-      213: 1823540885998108106
-    second: Impact_4
+    second: Hit03
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -111,7 +108,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bullet_0
+      name: Travel00
       rect:
         serializedVersion: 2
         x: 0
@@ -119,7 +116,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,7 +129,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullet_1
+      name: Travel01
       rect:
         serializedVersion: 2
         x: 8
@@ -140,7 +137,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,7 +150,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullet_2
+      name: Travel02
       rect:
         serializedVersion: 2
         x: 16
@@ -161,7 +158,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -174,7 +171,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Impact_0
+      name: Hit00
       rect:
         serializedVersion: 2
         x: 24
@@ -182,7 +179,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -195,7 +192,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Impact_1
+      name: Hit01
       rect:
         serializedVersion: 2
         x: 32
@@ -203,7 +200,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -216,7 +213,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Impact_2
+      name: Hit02
       rect:
         serializedVersion: 2
         x: 40
@@ -224,7 +221,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -237,7 +234,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Impact_3
+      name: Hit03
       rect:
         serializedVersion: 2
         x: 48
@@ -245,7 +242,7 @@ TextureImporter:
         width: 8
         height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -253,27 +250,6 @@ TextureImporter:
       bones: []
       spriteID: 368ee64d872abe490800000000000000
       internalID: -7715894896725399453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Impact_4
-      rect:
-        serializedVersion: 2
-        x: 56
-        y: 0
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: acd715736c48e4910800000000000000
-      internalID: 1823540885998108106
       vertices: []
       indices: 
       edges: []
