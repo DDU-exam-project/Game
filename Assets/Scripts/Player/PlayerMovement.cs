@@ -30,10 +30,7 @@ public class PlayerMovement : MonoBehaviour
 
             canMove = false;
         }
-        if (Input.GetButtonDown("Shoot"))
-        {
-            animator.SetTrigger("Shoot");
-        }
+        
         
         if (movement.sqrMagnitude!=0 && canMove)
         {
