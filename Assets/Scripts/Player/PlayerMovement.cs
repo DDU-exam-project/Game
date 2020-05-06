@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Input
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
         if (Input.GetButtonDown("Fire3") && canMove)
         {
             animator.SetTrigger("Attack");
