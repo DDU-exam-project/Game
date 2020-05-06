@@ -88,112 +88,112 @@ TextureImporter:
     second: MainChar 1_27
   - first:
       213: 6296824712434246232
-    second: DownAttack00
+    second: MainChar 1_28
   - first:
       213: 5852878385447621319
-    second: DownAttack01
+    second: MainChar 1_29
   - first:
       213: 9049903325875615308
-    second: DownAttack02
+    second: MainChar 1_30
   - first:
       213: 8182771948588779327
-    second: DownAttack03
+    second: MainChar 1_31
   - first:
       213: -8906296439996912589
-    second: DownAttack04
+    second: MainChar 1_32
   - first:
       213: -3985089220175849601
-    second: DownAttack05
+    second: MainChar 1_33
   - first:
       213: 8438685346437967652
-    second: DownAttack06
+    second: MainChar 1_34
   - first:
       213: 8934054643135264977
-    second: DownAttack07
+    second: MainChar 1_35
   - first:
       213: 4702923092680067202
-    second: DownAttack08
+    second: MainChar 1_36
   - first:
       213: -2503477609911726715
-    second: UpAttack00
+    second: MainChar 1_37
   - first:
       213: 6034105439888433775
-    second: UpAttack01
+    second: MainChar 1_38
   - first:
       213: -6479547643520933749
-    second: UpAttack02
+    second: MainChar 1_39
   - first:
       213: -5810146900771820378
-    second: UpAttack03
+    second: MainChar 1_40
   - first:
       213: 9158047794765904652
-    second: UpAttack04
+    second: MainChar 1_41
   - first:
       213: 2653366129230767676
-    second: UpAttack05
+    second: MainChar 1_42
   - first:
       213: -6520271905283224706
-    second: UpAttack06
+    second: MainChar 1_43
   - first:
       213: -8395427763125534921
-    second: UpAttack07
+    second: MainChar 1_44
   - first:
       213: -7077368384825133760
-    second: UpAttack08
+    second: MainChar 1_45
   - first:
       213: -7064151421221601195
-    second: LeftAttack00
+    second: MainChar 1_46
   - first:
       213: -6135524049445580247
-    second: LeftAttack01
+    second: MainChar 1_47
   - first:
       213: -4112082269952763748
-    second: LeftAttack02
+    second: MainChar 1_48
   - first:
       213: 2417996700225675766
-    second: LeftAttack03
+    second: MainChar 1_49
   - first:
       213: 3698044521820574336
-    second: LeftAttack04
+    second: MainChar 1_50
   - first:
       213: 3363369360613316615
-    second: LeftAttack05
+    second: MainChar 1_51
   - first:
       213: -7589891892551871843
-    second: LeftAttack06
+    second: MainChar 1_52
   - first:
       213: 5914859057542404278
-    second: LeftAttack07
+    second: MainChar 1_53
   - first:
       213: 5749879784617878475
-    second: LeftAttack08
+    second: MainChar 1_54
   - first:
       213: 2380434048078000534
-    second: RightAttack00
+    second: MainChar 1_55
   - first:
       213: -4786879489365796411
-    second: RightAttack01
+    second: MainChar 1_56
   - first:
       213: 1875948252372313704
-    second: RightAttack02
+    second: MainChar 1_57
   - first:
       213: -1897914045790120457
-    second: RightAttack03
+    second: MainChar 1_58
   - first:
       213: -4133467523160794343
-    second: RightAttack04
+    second: MainChar 1_59
   - first:
       213: -1890811412718538350
-    second: RightAttack05
+    second: MainChar 1_60
   - first:
       213: 7923285796426977453
-    second: RightAttack06
+    second: MainChar 1_61
   - first:
       213: -4923945305398940417
-    second: RightAttack07
+    second: MainChar 1_62
   - first:
       213: 2776367252269300985
-    second: RightAttack08
+    second: MainChar 1_63
   - first:
       213: 1447250312180112600
     second: MainChar 1_64
@@ -972,7 +972,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack00
+      name: MainChar 1_28
       rect:
         serializedVersion: 2
         x: 256
@@ -993,7 +993,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack01
+      name: MainChar 1_29
       rect:
         serializedVersion: 2
         x: 288
@@ -1014,7 +1014,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack02
+      name: MainChar 1_30
       rect:
         serializedVersion: 2
         x: 0
@@ -1035,7 +1035,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack03
+      name: MainChar 1_31
       rect:
         serializedVersion: 2
         x: 32
@@ -1056,7 +1056,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack04
+      name: MainChar 1_32
       rect:
         serializedVersion: 2
         x: 64
@@ -1077,7 +1077,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack05
+      name: MainChar 1_33
       rect:
         serializedVersion: 2
         x: 96
@@ -1098,7 +1098,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack06
+      name: MainChar 1_34
       rect:
         serializedVersion: 2
         x: 128
@@ -1119,7 +1119,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack07
+      name: MainChar 1_35
       rect:
         serializedVersion: 2
         x: 160
@@ -1140,7 +1140,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DownAttack08
+      name: MainChar 1_36
       rect:
         serializedVersion: 2
         x: 192
@@ -1161,7 +1161,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack00
+      name: MainChar 1_37
       rect:
         serializedVersion: 2
         x: 224
@@ -1182,7 +1182,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack01
+      name: MainChar 1_38
       rect:
         serializedVersion: 2
         x: 256
@@ -1203,7 +1203,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack02
+      name: MainChar 1_39
       rect:
         serializedVersion: 2
         x: 288
@@ -1224,7 +1224,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack03
+      name: MainChar 1_40
       rect:
         serializedVersion: 2
         x: 0
@@ -1245,7 +1245,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack04
+      name: MainChar 1_41
       rect:
         serializedVersion: 2
         x: 32
@@ -1266,7 +1266,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack05
+      name: MainChar 1_42
       rect:
         serializedVersion: 2
         x: 64
@@ -1287,7 +1287,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack06
+      name: MainChar 1_43
       rect:
         serializedVersion: 2
         x: 96
@@ -1308,7 +1308,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack07
+      name: MainChar 1_44
       rect:
         serializedVersion: 2
         x: 128
@@ -1329,7 +1329,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: UpAttack08
+      name: MainChar 1_45
       rect:
         serializedVersion: 2
         x: 160
@@ -1350,7 +1350,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack00
+      name: MainChar 1_46
       rect:
         serializedVersion: 2
         x: 192
@@ -1371,7 +1371,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack01
+      name: MainChar 1_47
       rect:
         serializedVersion: 2
         x: 224
@@ -1392,7 +1392,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack02
+      name: MainChar 1_48
       rect:
         serializedVersion: 2
         x: 256
@@ -1413,7 +1413,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack03
+      name: MainChar 1_49
       rect:
         serializedVersion: 2
         x: 288
@@ -1434,7 +1434,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack04
+      name: MainChar 1_50
       rect:
         serializedVersion: 2
         x: 0
@@ -1455,7 +1455,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack05
+      name: MainChar 1_51
       rect:
         serializedVersion: 2
         x: 32
@@ -1476,7 +1476,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack06
+      name: MainChar 1_52
       rect:
         serializedVersion: 2
         x: 64
@@ -1497,7 +1497,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack07
+      name: MainChar 1_53
       rect:
         serializedVersion: 2
         x: 96
@@ -1518,7 +1518,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LeftAttack08
+      name: MainChar 1_54
       rect:
         serializedVersion: 2
         x: 128
@@ -1539,7 +1539,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack00
+      name: MainChar 1_55
       rect:
         serializedVersion: 2
         x: 160
@@ -1560,7 +1560,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack01
+      name: MainChar 1_56
       rect:
         serializedVersion: 2
         x: 192
@@ -1581,7 +1581,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack02
+      name: MainChar 1_57
       rect:
         serializedVersion: 2
         x: 224
@@ -1602,7 +1602,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack03
+      name: MainChar 1_58
       rect:
         serializedVersion: 2
         x: 256
@@ -1623,7 +1623,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack04
+      name: MainChar 1_59
       rect:
         serializedVersion: 2
         x: 288
@@ -1644,7 +1644,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack05
+      name: MainChar 1_60
       rect:
         serializedVersion: 2
         x: 0
@@ -1665,7 +1665,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack06
+      name: MainChar 1_61
       rect:
         serializedVersion: 2
         x: 32
@@ -1686,7 +1686,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack07
+      name: MainChar 1_62
       rect:
         serializedVersion: 2
         x: 64
@@ -1707,7 +1707,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: RightAttack08
+      name: MainChar 1_63
       rect:
         serializedVersion: 2
         x: 96

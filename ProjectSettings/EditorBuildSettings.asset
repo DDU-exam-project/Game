@@ -9,18 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5f03f5f55339ad74384d5253349dc82c
   - enabled: 1
-    path: Assets/Scenes/HubScene.unity
-    guid: f5516dfb36a15d0429485b7464f9c960
-  - enabled: 1
     path: Assets/Scenes/TestingScene.unity
-    guid: ec9399bdc477e4b5e8ec2ce36ec3cfec
-  - enabled: 1
-    path: Assets/Scenes/PauseMenu.unity
-    guid: 53d0b4f46b8c6db46b30f86b47441870
-  - enabled: 1
-    path: Assets/Scenes/GameOverScreen.unity
-    guid: 850efa2cfb9422143a046808f767b67e
-  - enabled: 1
-    path: Assets/Scenes/HealthBarUI.unity
-    guid: bd03d79551ef4ce4d97bc99357f8080a
+    guid: c56baf6937228c04ca41dee23de46fd2
   m_configObjects: {}
