@@ -29,17 +29,15 @@ public class PlayerMovement : MonoBehaviour
 
             canMove = false;
         }
-        if (Input.GetButtonDown("Shoot"))
-        {
-            animator.SetTrigger("Shoot");
-        }
-        
-        if (movement.sqrMagnitude!=0 && canMove)
+
+
+        if (movement.sqrMagnitude != 0 && canMove)
         {
             animator.SetFloat("Horizontal", movement.x);
             animator.SetFloat("Vertical", movement.y);
-        }   
+        }
         animator.SetFloat("Speed", movement.sqrMagnitude);
+
     }
 
     void FixedUpdate() 
