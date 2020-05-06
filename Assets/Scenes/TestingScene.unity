@@ -200,8 +200,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab8073679abcde4b8231456d959bd1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 0}
-  muzzlePoint: {fileID: 0}
 --- !u!1 &302247808
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +503,7 @@ PrefabInstance:
     - target: {fileID: 148504423703680610, guid: 3ca1f6293ee740e419782d8f06a2e015,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00000035762787
+      value: -0.00000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 148504424958786539, guid: 3ca1f6293ee740e419782d8f06a2e015,
         type: 3}
@@ -515,7 +513,7 @@ PrefabInstance:
     - target: {fileID: 148504424958786539, guid: 3ca1f6293ee740e419782d8f06a2e015,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.00000035762787
+      value: -0.00000023841858
       objectReference: {fileID: 0}
     - target: {fileID: 148504424958786540, guid: 3ca1f6293ee740e419782d8f06a2e015,
         type: 3}
@@ -605,7 +603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &1320263849
 Rigidbody2D:
   serializedVersion: 4
@@ -1395,7 +1393,7 @@ SpriteShapeRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1890996165}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
