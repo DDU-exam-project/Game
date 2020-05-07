@@ -41,6 +41,10 @@ public class EnemyAI : MonoBehaviour
     Vector2 force;
     Vector2 direction;
 
+    void OnEnable() {
+        target = PlayerScript.player.gameObject.transform;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +87,7 @@ public class EnemyAI : MonoBehaviour
     {
         // If enemy is dead
         if (!animator.GetBool("IsAlive")) {
+            //rb.constraints = RigidbodyConstraints.FreezePosition;
             return;
         }
 
