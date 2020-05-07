@@ -26,9 +26,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetButtonDown("Fire3") && canMove)
         {
-            animator.SetTrigger("Attack");
-
             canMove = false;
+            animator.SetTrigger("Attack");            
         }
 
 
