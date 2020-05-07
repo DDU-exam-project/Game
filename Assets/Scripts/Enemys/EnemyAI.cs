@@ -88,6 +88,11 @@ public class EnemyAI : MonoBehaviour
     }
     void FixedUpdate()
     {
+        // If enemy is dead
+        if (!animator.GetBool("IsAlive")) {
+            return;
+        }
+
         // If there is no path then return
         if (path == null) 
             return;
