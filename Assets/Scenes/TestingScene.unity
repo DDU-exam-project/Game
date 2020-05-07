@@ -1215,7 +1215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 588409213}
   animator: {fileID: 1759202476}
-  speed: 200
+  speed: 150
   attackDistance: 1
   nextWaypointDistance: 1
 --- !u!95 &1759202476
