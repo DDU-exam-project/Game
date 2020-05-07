@@ -176,6 +176,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  isPlayerHit: 1
+  lifesteal: 1
 --- !u!1 &437814804429652169
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  isPlayerHit: 1
+  lifesteal: 1
 --- !u!1 &1986765743624201702
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  isPlayerHit: 1
+  lifesteal: 1
 --- !u!1 &2050159473720067936
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  isPlayerHit: 1
+  lifesteal: 1
 --- !u!1 &4332129334875715107
 GameObject:
   m_ObjectHideFlags: 0
