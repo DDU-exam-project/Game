@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f288b11a4078a5040b0f6657b4b4e36f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomSize: 32
+  roomSize: 2
   roomTemplates:
   - {fileID: 1152370622949468, guid: 71ef14862abca91428027002fc9c0b20, type: 3}
   - {fileID: 1132586047390324, guid: d19f5808b3e53ac40b15db7587807cbc, type: 3}

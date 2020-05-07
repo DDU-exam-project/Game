@@ -32,14 +32,14 @@ public class LevelGeneration : MonoBehaviour {
 		float randomCompare = 0.2f, randomCompareStart = 0.2f, randomCompareEnd = 0.01f;
 		//add rooms
 		for (int i = 0; i < numberOfRooms -1; i++){
-			float randomPerc = ((float) i) / (((float)numberOfRooms - 1));
+			float randomPerc = ((float) i) / (((float) numberOfRooms - 1));
 			randomCompare = Mathf.Lerp(randomCompareStart, randomCompareEnd, randomPerc);
 			//grab new position
 			checkPos = NewPosition();
 			//test new position
 			if (NumberOfNeighbors(checkPos, takenPositions) > 1 && Random.value > randomCompare){
 				int iterations = 0;
-				do{
+				do {
 					checkPos = SelectiveNewPosition();
 					iterations++;
 				} while(NumberOfNeighbors(checkPos, takenPositions) > 1 && iterations < 100);
