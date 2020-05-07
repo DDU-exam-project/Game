@@ -6,19 +6,20 @@ public class ShootingScript : MonoBehaviour
     [SerializeField] GameObject bulletPrefab;
     [SerializeField] GameObject crosshair;
 
-    [SerializeField] float shootingCost = 2f;
+    [SerializeField] int shootingCost = 2;
     [SerializeField] float crosshairDistance = 1f;
     [SerializeField] float bulletSpeed = 1f;
 
     Vector2 crosshairDir;
     PlayerMovement pM;
     bool endOfAiming;
+    bool isAiming;
 
     // Start is called before the first frame update
     void Start()
     {
         pM = GetComponent<PlayerMovement>();
-        //crosshair.SetActive(false);
+        crosshair.SetActive(false);
     }
 
     // Update is called once per frame
@@ -26,29 +27,31 @@ public class ShootingScript : MonoBehaviour
     {
         crosshairDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         endOfAiming = Input.GetButtonUp("Shoot");
-        Aim();
         Shoot();
-        /*if (Input.GetButton("Shoot"))
+        if (Input.GetButton("Shoot"))
         {
             pM.canMove = false;
             pM.animator.SetBool("Aiming", true);
+            pM.animator.SetFloat("ShootState", 0f);
             crosshair.SetActive(true);
-            Aim();
+            Aim();           
         }
         else
         {
             pM.canMove = true;
             crosshair.SetActive(false);
-        }*/
+            pM.animator.SetBool("Aiming", false);
+        }
     }
 
     void Aim()
     {
         if (crosshairDir != Vector2.zero)
         {
-            crosshair.transform.localPosition = (crosshairDir * crosshairDistance).normalized;
+            crosshair.transform.localPosition = crosshairDir * crosshairDistance;
             pM.animator.SetFloat("AimX", crosshairDir.x);
             pM.animator.SetFloat("AimY", crosshairDir.y);
+            
         }
     }
 
@@ -58,8 +61,13 @@ public class ShootingScript : MonoBehaviour
         shootingDirection.Normalize();
         if (endOfAiming)
         {
+            pM.animator.SetFloat("ShootState", 1f);
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = shootingDirection * bulletSpeed;
+            BulletScript bulletScript = bullet.GetComponent<BulletScript>();
+
+            bulletScript.velocity = shootingDirection * bulletSpeed;
+            bulletScript.player = gameObject;
+            bullet.transform.Rotate(0, 0, Mathf.Atan2(shootingDirection.y, shootingDirection.x) * Mathf.Rad2Deg);
         }
     }
 }

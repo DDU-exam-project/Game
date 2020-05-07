@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public Animator animator;
 
-    [HideInInspector] public bool canMove = true;
+    public bool canMove = true;
 
     Vector2 movement;
     Rigidbody2D rb;
@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     {
         // Input
         movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+
         if (Input.GetButtonDown("Fire3") && canMove)
         {
             animator.SetTrigger("Attack");
