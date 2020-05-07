@@ -97,6 +97,7 @@ public class EnemyAI : MonoBehaviour
         if (Vector2.Distance(rb.position, target.position) <= attackDistance) {
             //Debug.LogWarning("ATTACK");
             //Debug.Log(Vector2.Distance(rb.position, target.position));
+            animator.SetBool("Attack", true);
             return;
 
         }
