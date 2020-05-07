@@ -7,7 +7,7 @@ public class ShootingScript : MonoBehaviour
     [SerializeField] GameObject crosshair;
 
     [SerializeField] float shootingCost = 2;
-    [SerializeField] float crossHairDIstance = 1;
+    [SerializeField] float crosshairDistance = 1;
     Vector2 aimDir;
     PlayerMovement pM;
 
@@ -20,19 +20,26 @@ public class ShootingScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        aimDir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if (Input.GetButton("Shoot"))
         {
             pM.canMove = false;
+            pM.animator.SetBool("Aiming", true);
+            Aim();
         }
         else
         {
             pM.canMove = true;
+
         }
     }
 
     void Aim()
     {
-
+        if (aimDir != Vector2.zero)
+        {
+            crosshair.transform.localPosition = aimDir * crosshairDistance;
+        }
     }
 
     void Shoot()
