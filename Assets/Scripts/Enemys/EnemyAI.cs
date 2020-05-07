@@ -93,22 +93,19 @@ public class EnemyAI : MonoBehaviour
             return;
 
         
-        // Test if enemy is within attack distance
-        if (Vector2.Distance(rb.position, target.position) <= attackDistance) {
-            //Debug.LogWarning("ATTACK");
-            //Debug.Log(Vector2.Distance(rb.position, target.position));
-            animator.SetBool("Attack", true);
-            return;
-
-        }
-
-
         // Test if at end of path
         if (currentWaypoint >= path.vectorPath.Count) {
             reachEndOfPath = true;
             return;
         } else {
             reachEndOfPath = false;
+        }
+
+        // Test if enemy is within attack distance
+        if (Vector2.Distance(rb.position, target.position) <= attackDistance) {
+            animator.SetBool("Attack", true);
+            return;
+
         }
 
         // Calculate a normalized vector ind the direaction of path
