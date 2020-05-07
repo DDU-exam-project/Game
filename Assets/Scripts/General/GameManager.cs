@@ -43,8 +43,6 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         StartCoroutine(GameOverAsyncLoad());
-        CameraScript.Instance.gameObject.transform.position = Vector3.zero;
-        PlayerScript.player.gameObject.transform.position = Vector3.zero;
 
         SceneManager.UnloadSceneAsync("HealthBarUI");
         Invoke("RestartGame", timeBeforeRestart);

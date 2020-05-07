@@ -9,6 +9,7 @@ TagManager:
   - T
   - B
   - D
+  - Enemy
   layers:
   - Default
   - TransparentFX
