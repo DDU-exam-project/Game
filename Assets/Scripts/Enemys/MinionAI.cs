@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class EnemyAI : MonoBehaviour
+public class MinionAI : MonoBehaviour
 {
 
     // Enemy target
@@ -13,23 +13,22 @@ public class EnemyAI : MonoBehaviour
     public Animator animator;
 
     // Enemy speed
-    public float speed = 200f;
+    public float speed = 100f;
 
     // Minimum attack distance
-    public float attackDistance = 10f;
+    public float attackDistance = 1f;
 
     // Minimum distance to complete way point
-    public float nextWaypointDistance = 3;
+    public float nextWaypointDistance = 1;
 
-    // Enemy types
-     public enum EnemyTypes{
+    //Define Enum
+     public enum EnemyType{
          Minion,
          Boss
     };
      
-     // Choose a enemy type
-     public EnemyTypes EnemyType;
-
+     //This is what you need to show in the inspector.
+     public EnemyType Type;
 
     Path path;
     int currentWaypoint = 0;
@@ -72,15 +71,32 @@ public class EnemyAI : MonoBehaviour
     }
 
     void Update() {
-        if (rb.velocity != Vector2.zero) {
-            animator.SetFloat("Horizontal", rb.velocity.x);
-            animator.SetFloat("Vertical", rb.velocity.y);
-        }
+        //if (force.x > 0) {
+        //    animator.SetFloat("Horizontal", force.x);
+        //} else {
+        //    animator.SetFloat("Horizontal", rb.velocity.x);
+        //}
 
+        //if (force.y > 0) {
+        //    animator.SetFloat("Horizontal", force.y);
+        //} else {
+        //    animator.SetFloat("Horizontal", rb.velocity.y);
+        //}
+
+        //animator.SetFloat("Horizontal", rb.velocity.x);
+        //animator.SetFloat("Vertical", rb.velocity.y);
+        //animator.SetFloat("Speed", 1);
+        //animator.SetFloat("Horizontal", direction.x);
+        //animator.SetFloat("Vertical", direction.y);
+        animator.SetFloat("Horizontal", rb.velocity.x);
+        animator.SetFloat("Vertical", rb.velocity.y);
         animator.SetFloat("Speed", rb.velocity.sqrMagnitude);
+        //Debug.Log(rb.velocity.sqrMagnitude);
+
     }
     void FixedUpdate()
     {
+        Debug.Log(Type);
         // If enemy is dead
         if (!animator.GetBool("IsAlive")) {
             return;
@@ -101,7 +117,7 @@ public class EnemyAI : MonoBehaviour
 
         // Test if enemy is within attack distance
         if (Vector2.Distance(rb.position, target.position) <= attackDistance) {
-            attack();
+            animator.SetBool("Attack", true);
             return;
 
         }
@@ -109,9 +125,11 @@ public class EnemyAI : MonoBehaviour
         // Calculate a normalized vector ind the direaction of path
         direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
         // Calculate the force to add to enemy
+        //Vector2 force = direction * speed * Time.fixedDeltaTime;
         force = direction * speed * Time.deltaTime;
 
         // Addeds force to enemy
+        //rb.AddForce(force);
         rb.velocity = force;
 
         // Calculate distance between enemy and next way point
@@ -121,11 +139,5 @@ public class EnemyAI : MonoBehaviour
         if (distance < nextWaypointDistance) {
             currentWaypoint++;
         }
-    }
-
-    void attack() {
-        //if (EnemyType == EnemyTypes.Minion) {
-            animator.SetBool("Attack", true);
-        //}
     }
 }

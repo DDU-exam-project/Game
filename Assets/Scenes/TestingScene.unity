@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  isPlayerHit: 0
+  lifesteal: 1
 --- !u!58 &93775787
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -299,6 +301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  isPlayerHit: 0
+  lifesteal: 1
 --- !u!58 &724795620
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -360,6 +364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  isPlayerHit: 0
+  lifesteal: 1
 --- !u!58 &748606227
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -549,6 +555,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  isPlayerHit: 0
+  lifesteal: 1
 --- !u!58 &1220792387
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -624,6 +632,7 @@ MonoBehaviour:
   speed: 2000
   attackDistance: 2
   nextWaypointDistance: 1
+  EnemyType: 0
 --- !u!61 &1320263851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -752,6 +761,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 2
+  isPlayerHit: 0
+  lifesteal: 1
 --- !u!58 &1469941971
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -813,11 +824,14 @@ GameObject:
   - component: {fileID: 1581504457}
   - component: {fileID: 1581504456}
   - component: {fileID: 1581504458}
-  - component: {fileID: 1581504459}
   - component: {fileID: 1581504460}
+  - component: {fileID: 1581504463}
+  - component: {fileID: 1581504462}
+  - component: {fileID: 1581504459}
+  - component: {fileID: 1581504461}
   m_Layer: 0
   m_Name: Heimdallr
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -936,14 +950,75 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 5
+  m_AngularDrag: 1.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1581504461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581504455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b1115c69934f0b4cb223b0b61d588af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  hurtTime: 0.3
+  stayAfterDeathTime: 10
+--- !u!114 &1581504462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581504455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c213008a0b12a7a99ea1006dcf9b393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 588409213}
+  animator: {fileID: 1581504458}
+  speed: 200
+  attackDistance: 1
+  nextWaypointDistance: 1
+  EnemyType: 1
+--- !u!114 &1581504463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1581504455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
 --- !u!1 &1586109169
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,6 +1064,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  isPlayerHit: 0
+  lifesteal: 1
 --- !u!58 &1586109172
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1023,7 +1100,7 @@ GameObject:
   - component: {fileID: 1759202482}
   m_Layer: 0
   m_Name: Minion
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1035,7 +1112,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759202474}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c213008a0b12a7a99ea1006dcf9b393, type: 3}
   m_Name: 
@@ -1045,6 +1122,7 @@ MonoBehaviour:
   speed: 150
   attackDistance: 1
   nextWaypointDistance: 1
+  EnemyType: 0
 --- !u!95 &1759202476
 Animator:
   serializedVersion: 3
@@ -1171,7 +1249,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 1.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -1255,6 +1333,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  isPlayerHit: 0
+  lifesteal: 1
 --- !u!58 &1772559892
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1446,7 +1526,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   version: 1
   data:
-    dataString: UEsDBBQAAAgIAAAIIewJjVcdUgIAAPQEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3HJkBCb61DSA+ETGgnF1+EtMYaZMmjjwDJ8N+7km3s0unJ0tu3u28/5E8ilK2BOW2WRvCV5kC+jUg4ky+j3vgER7rTaiM+oOO8Ce7KQKKR80qd0Iinwc3qCpwR7LvayUBOEPRKFNpUC76DTFtnES6otIAmo13wVgh9jsgRPzfz4HLC0/gunD7wNE9GZzwyUA5MT+2IHa1hecUkrWrgQXJPTictO21oCotpGcnXaYiupRS21ULcqY61ZrS2HitBAhcUa4sCxngtQexK114uzuuisOBaUYaeHoTBFjVRyQ/d9K2idt8oe6fShzzj6SyqaoKu/rHfpNFcGF09dXnTJORwpWD7V3pi1LpBY4fwQy88jQ06ULmnWwlvJahnvTTaK45GZ3xw9RbGD/31UlpWAtv3eCP1CvT1/8cTajjH6o+ZFNU2dn7SABupY7/j8MHgbH6i4Lgatg2BaFDx28IvuhvuUGt4FMY6NLVVqiBvq70JVLKIPQvVeJdpoyDCregaFJXu9IJh3PUIr2yDtFeWRxpeS5u8tXWP4Molwj0/Sa5ML/pwGZYt9WEFtlx7J4WCXnQwPGOfMq1Us2HDnnRuG28KygZuOy/436tF6JwV97P7hN+lk+l0xm5ubydJOttO57OCpQktSNw9obBOKl8aoW17cGqqD65wz7qfyGhpaB23nRt6WIqPSg9aLlShN8wAqHUT4SIcDCbBd8kXXGCDNuCcUHHe5DMnUrM98PwSKI+VLo7O0LyPkpNavGsXkJxk8a+RkzM5/wFQSwMEFAAACAgAAAgh7LvXWNNtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKiZXKahZmFQYq5oYmpqVmyrrGxiYGhWZKppVlasqFBYppSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7AmNVx1SAgAA9AQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7LvXWNNtAAAAeAAAAAkAJAAAAAAAAAAAAAAAnwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABXAwAAAAA=
+    dataString: UEsDBBQAAAgIAAAIIeyuNMk1UgIAAPYEAAALACQAZ3JhcGgwLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQF1VE1z2jAQ/SuMzk3HJkBCb61DSA+ETGgnF1+EtMYaZMmjjwDJ8N+7kg123enJ0r63u28/5E8ilK2BOW2WRvCV5kC+jUg4ky+jDnyCI91ptREfcOG8Ce7KQKKR80qd0GhPg5vVFTgj2He1k4GcoNErUWhTLfgOMm2dRXNBpQWEjHbBW6Hpc0SO+LmZB5cTnsZ34fSBp3kyOuORgXJgOuqFeKE1LK+YpFUNPEjuyOmkZacNTWExLSP5Og3RtZTCtlqIO9Wx1ozW1mMlSOCCYm1RwBivJYhd6drL1XldFBZcK8rQ04Mw2KImKvmhm75V1O4bZe9U+pBnPJ1FVU3Q1T/4TRrhwujq6ZI3TUIOVwq2f6UnRq3rNbZvfuiEp7FBByr3dCvhrQT1rJdGe8URdMYHV29h/NBdr6VlJbB9Z2+kDoy+/v94Qg3nWP0xk6Laxs5PGsNG6tjvOHwwOJufKDiuhm1DoDWo+G3hF931d6gFHoWxDqG2ShXkbbU3gUoWsWehGu8ybRREcyu6BkWlO71gGDcc4QDrpR0gjzS8ljZ5i10ewcAlmjt+kgygF324DsuW+rACW669k0L1gwXkGRuVaaWaFbMDNPhtvCko6/vtvOB/Lxehc1bcz+4TfpdOptMZu7m9nSTpbDudzwqWJrQgcfuEwkqpfGmktg3CuamulQo37fIbGS0NreO+c0MPS/FR6V7ThSr0hhkAtW4iXJWDwST4MvmCC2zRBpwTKk6cfOZEarYHnl8D5bHUxdEZmndRclKLd+2CJSdZ/G/k5EzOfwBQSwMEFAAACAgAAAgh7LvXWNNtAAAAeAAAAAkAJABtZXRhLmpzb24KACAAAAAAAAEAGAAAgD7V3rGdAQCAPtXesZ0BAIA+1d6xnQGrVipLLSrOzM9TslIw0TPSMzTVUVBKL0osyCgGihiCOKWZKSB2tFKiZXKahZmFQYq5oYmpqVmyrrGxiYGhWZKppVlasqFBYppSLFB9SWVBql9ibipET0BiSUZaZl5KZl66nntRZoo7yGil2FoAUEsBAi0AFAAACAgAAAgh7K40yTVSAgAA9gQAAAsAJAAAAAAAAAAAAAAAAAAAAGdyYXBoMC5qc29uCgAgAAAAAAABABgAAIA+1d6xnQEAgD7V3rGdAQCAPtXesZ0BUEsBAi0AFAAACAgAAAgh7LvXWNNtAAAAeAAAAAkAJAAAAAAAAAAAAAAAnwIAAG1ldGEuanNvbgoAIAAAAAAAAQAYAACAPtXesZ0BAIA+1d6xnQEAgD7V3rGdAVBLBQYAAAAAAgACALgAAABXAwAAAAA=
     upgradeData: 
     file_cachedStartup: {fileID: 0}
     data_cachedStartup: 
@@ -1518,7 +1598,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 0
+  showGraphs: 1
 --- !u!4 &1930279980
 Transform:
   m_ObjectHideFlags: 0
@@ -1578,6 +1658,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
+  isPlayerHit: 0
+  lifesteal: 1
 --- !u!58 &2022960897
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1846,6 +1928,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dumpster
       objectReference: {fileID: 0}
+    - target: {fileID: 3142105498782841442, guid: 1bda1676313f57542a1eeb61354b9655,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3142105498782841471, guid: 1bda1676313f57542a1eeb61354b9655,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1912,7 +1999,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 223329232, guid: 448570d9b8111af4c9c7377f06b7b4a6, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4332129334875715105, guid: 448570d9b8111af4c9c7377f06b7b4a6,
         type: 3}
