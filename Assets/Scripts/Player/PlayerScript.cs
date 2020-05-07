@@ -41,6 +41,9 @@ public class PlayerScript : CharacterScript
 
     public void LifeSteal(int amount)
     {
-        CurrentHealth += amount;
+        if (CurrentHealth + amount <= MaxHealth)
+        {
+            CurrentHealth += amount;
+        }       
     }
 }
