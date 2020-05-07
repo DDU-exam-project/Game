@@ -39,5 +39,8 @@ public class PlayerScript : CharacterScript
         StartCoroutine(HurtCoroutine());
     }
 
-    
+    public void LifeSteal(int amount)
+    {
+        CurrentHealth += amount;
+    }
 }
