@@ -11,11 +11,9 @@ public class PlayerMovement : MonoBehaviour
     Vector2 movement;
     Rigidbody2D rb;
 
-
     private void OnEnable()
     {
-        rb = GetComponent<Rigidbody2D>();
-        
+        rb = GetComponent<Rigidbody2D>();      
     }
 
     // Update is called once per frame
@@ -46,6 +44,5 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.MovePosition(rb.position + movement.normalized * moveSpeed * Time.fixedDeltaTime);
         }       
-
     }
 }

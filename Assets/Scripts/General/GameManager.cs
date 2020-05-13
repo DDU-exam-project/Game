@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        StartCoroutine(GameOverAsyncLoad());
+        StartCoroutine(AsyncSceneLoad("GameOverScreen"));
 
         SceneManager.UnloadSceneAsync("HealthBarUI");
         Invoke("RestartGame", timeBeforeRestart);
@@ -56,9 +56,9 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadSceneAsync("HealthBarUI", LoadSceneMode.Additive);
     }
     
-    IEnumerator GameOverAsyncLoad()
+    IEnumerator AsyncSceneLoad(string whatScene)
     {
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("GameOverScreen");
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(whatScene);
         while (!asyncLoad.isDone)
         {
             yield return null;
