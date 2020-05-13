@@ -3773,9 +3773,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7161879564943488678}
   - component: {fileID: 7243219338803035535}
+  - component: {fileID: 7136420251037862523}
   m_Layer: 0
   m_Name: HouseUDR
-  m_TagString: Untagged
+  m_TagString: TBR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3811,6 +3812,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &7136420251037862523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6144020943813914968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c6b8ef7f114a841b47b534d5148b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridPos: {x: 0, y: 0}
 --- !u!1 &7708526238736660591
 GameObject:
   m_ObjectHideFlags: 0

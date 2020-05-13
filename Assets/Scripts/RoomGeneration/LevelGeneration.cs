@@ -10,7 +10,7 @@ public class LevelGeneration : MonoBehaviour {
     List<GameObject> roomGameObjects;
     List<Vector2> takenPositions = new List<Vector2>();
     [SerializeField] int roomSize;
-	int gridSizeX, gridSizeY, numberOfRooms = 2;
+	int gridSizeX, gridSizeY, numberOfRooms = 20;
 	[SerializeField] List<GameObject> roomTemplates;
 	void Start () {
 		if (numberOfRooms >= (worldSize.x * 2) * (worldSize.y * 2)){ // make sure we dont try to make more rooms than can fit in our grid

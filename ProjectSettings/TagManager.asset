@@ -8,8 +8,18 @@ TagManager:
   - L
   - T
   - B
-  - D
   - Enemy
+  - TB
+  - TBL
+  - TBLR
+  - BL
+  - BLR
+  - LR
+  - TR
+  - BR
+  - TLR
+  - TBR
+  - TL
   layers:
   - Default
   - TransparentFX

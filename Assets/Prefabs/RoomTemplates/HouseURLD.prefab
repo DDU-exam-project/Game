@@ -3398,9 +3398,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2957236972012243595}
   - component: {fileID: 3380858907453604258}
+  - component: {fileID: -6254125720583871308}
   m_Layer: 0
   m_Name: HouseURLD
-  m_TagString: Untagged
+  m_TagString: TBLR
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3438,6 +3439,19 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &-6254125720583871308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2246696575310122357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c6b8ef7f114a841b47b534d5148b7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gridPos: {x: 0, y: 0}
 --- !u!1 &4510406175479384858
 GameObject:
   m_ObjectHideFlags: 0
