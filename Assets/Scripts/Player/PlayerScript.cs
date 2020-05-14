@@ -43,6 +43,7 @@ public class PlayerScript : CharacterScript
         if (CurrentHealth <= 0)
         {
             movementScript.animator.SetTrigger("Die");
+            movementScript.enabled = false;
             GameManager.Instance.EndGame();
             return;
         }
