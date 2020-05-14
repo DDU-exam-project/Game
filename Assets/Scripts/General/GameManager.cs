@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         StartCoroutine(AsyncSceneLoad("GameOverScreen"));
-
+        LevelGeneration.roomsList.Clear();
         SceneManager.UnloadSceneAsync("HealthBarUI");
         Invoke("RestartGame", timeBeforeRestart);
     }

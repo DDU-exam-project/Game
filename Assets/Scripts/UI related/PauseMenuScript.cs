@@ -27,6 +27,7 @@ public class PauseMenuScript : MonoBehaviour
     public void ToMainMenu()
     {
         Time.timeScale = 1f;
+        LevelGeneration.roomsList.Clear();
         Destroy(PlayerScript.player.gameObject);
         Destroy(CameraScript.Instance.gameObject);
         Destroy(GameManager.Instance.gameObject);
