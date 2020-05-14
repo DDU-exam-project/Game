@@ -48,11 +48,7 @@ public class OnTriggerMoveTo : MonoBehaviour
                 if (room.GetComponent<GridPosition>().gridPos == roomPosition + temp)
                 {
                     currentRoom.SetActive(false);
-
                     room.SetActive(true);
-
-                    currentRoom = room;
-                    
                     PlayerScript.player.teleportResetTimer();
                     collision.gameObject.transform.position = room.transform.Find(newDoor).position;
                     break;
