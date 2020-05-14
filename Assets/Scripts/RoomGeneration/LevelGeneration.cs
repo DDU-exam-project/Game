@@ -16,35 +16,6 @@ public class LevelGeneration : MonoBehaviour {
 		DrawMap();
 	}
 
-	void DrawMap()
-	{
-		foreach (Room room in rooms)
-		{
-			if (room == null) continue; //skip where there is no room
-			
-			room.makeTag();
-			Vector2 drawPos = room.gridPos;
-			drawPos.x *= 1 * roomSize;//aspect ratio of map sprite
-			drawPos.y *= 1 * roomSize;
-            Vector2 currentPos = room.gridPos;
-            foreach (GameObject roomTemplate in roomTemplates)
-			{
-                if (roomTemplate.CompareTag(room.tag))
-                {
-					foreach (OnTriggerMoveTo comp in roomTemplate.GetComponentsInChildren<OnTriggerMoveTo>())
-					{
-						comp.roomPosition = room.gridPos;
-					}
-					roomTemplate.GetComponent<GridPosition>().gridPos = room.gridPos;
-                    GameObject spawned = Instantiate(roomTemplate, drawPos, Quaternion.identity);
-					roomsList.Add(spawned);
-					if (currentPos != Vector2.zero) {
-						spawned.SetActive(false);
-					}
-                }
-            }
-		}
-    }
 	Vector2 Direction(Vector2 LastDirect)
 	{
 		Vector2 direct = new Vector2(0, 0);
@@ -153,6 +124,37 @@ public class LevelGeneration : MonoBehaviour {
 					rooms[x,y].doorRight = false;
 				}else{
 					rooms[x,y].doorRight = (rooms[x+1,y] != null);
+				}
+			}
+		}
+	}
+
+	void DrawMap()
+	{
+		foreach (Room room in rooms)
+		{
+			if (room == null) continue; //skip where there is no room
+
+			room.makeTag();
+			Vector2 drawPos = room.gridPos;
+			drawPos.x *= 1 * roomSize;//aspect ratio of map sprite
+			drawPos.y *= 1 * roomSize;
+			Vector2 currentPos = room.gridPos;
+			foreach (GameObject roomTemplate in roomTemplates)
+			{
+				if (roomTemplate.CompareTag(room.tag))
+				{
+					foreach (OnTriggerMoveTo comp in roomTemplate.GetComponentsInChildren<OnTriggerMoveTo>())
+					{
+						comp.roomPosition = room.gridPos;
+					}
+					roomTemplate.GetComponent<GridPosition>().gridPos = room.gridPos;
+					GameObject spawned = Instantiate(roomTemplate, drawPos, Quaternion.identity);
+					roomsList.Add(spawned);
+					if (currentPos != Vector2.zero)
+					{
+						spawned.SetActive(false);
+					}
 				}
 			}
 		}
