@@ -27,6 +27,9 @@ public class PauseMenuScript : MonoBehaviour
     public void ToMainMenu()
     {
         Time.timeScale = 1f;
+        Destroy(PlayerScript.player.gameObject);
+        Destroy(CameraScript.Instance.gameObject);
+        Destroy(GameManager.Instance.gameObject);
         SceneManager.LoadScene("MainMenu");
     }
 
