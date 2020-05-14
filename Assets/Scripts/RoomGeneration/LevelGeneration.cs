@@ -11,6 +11,7 @@ public class LevelGeneration : MonoBehaviour {
 	float denistyConstant = 0.1f;
 	float straightWalkConstant = 0.3f;
 	Room[,] rooms;
+	public static List<GameObject> roomsList = new List<GameObject>();
 	[SerializeField] List<GameObject> roomTemplates;
 	void Start () {
 
@@ -39,7 +40,11 @@ public class LevelGeneration : MonoBehaviour {
 						comp.roomPosition = room.gridPos;
 					}
 					roomTemplate.GetComponent<GridPosition>().gridPos = room.gridPos;
-                    Instantiate(roomTemplate, drawPos, Quaternion.identity);
+                    GameObject spawned = Instantiate(roomTemplate, drawPos, Quaternion.identity);
+					roomsList.Add(spawned);
+					if (currentPos != Vector2.zero) {
+						spawned.SetActive(false);
+					}
                 }
             }
 		}

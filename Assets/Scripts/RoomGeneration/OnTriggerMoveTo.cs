@@ -9,6 +9,12 @@ public class OnTriggerMoveTo : MonoBehaviour
     public Vector2 roomPosition;
     Vector2 temp;
 
+    GameObject currentRoom;
+
+    void OnEnable() {
+        currentRoom = gameObject.transform.parent.gameObject;
+    }
+
     void FixedUpdate()
     {
         tag = gameObject.tag;
@@ -16,12 +22,6 @@ public class OnTriggerMoveTo : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        GridPosition[] GridPositions = Object.FindObjectsOfType<GridPosition>();
-        GameObject[] rooms = new GameObject[GridPositions.Length];
-        for (int i = 0; i < rooms.Length; i++)
-        {
-            rooms[i] = GridPositions[i].gameObject;
-        }
         if (collision.CompareTag("Player") & PlayerScript.player.canTeleport)
         {
             switch (tag)
@@ -45,15 +45,23 @@ public class OnTriggerMoveTo : MonoBehaviour
                 default:
                     throw new System.ArgumentException("The door didn't have a tag that is R, L, T or B", "Invalid Tag");
             }
-            foreach (GameObject room in rooms)
+            foreach (GameObject room in LevelGeneration.roomsList)
             {
+
                 if (room.GetComponent<GridPosition>().gridPos == roomPosition + temp)
                 {
+                    currentRoom.SetActive(false);
+
+                    room.SetActive(true);
+
+                    currentRoom = room;
+
                     Debug.Log(roomPosition);
                     Debug.Log(roomPosition + temp);
                     Debug.Log(newDoor);
                     PlayerScript.player.teleportResetTimer();
                     collision.gameObject.transform.position = room.transform.Find(newDoor).position;
+                    break;
                 }
             }
         }
