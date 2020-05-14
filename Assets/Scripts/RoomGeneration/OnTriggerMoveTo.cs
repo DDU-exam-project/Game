@@ -6,7 +6,6 @@ public class OnTriggerMoveTo : MonoBehaviour
     string newDoor;
     public Vector2 roomPosition;
     Vector2 temp;
-
     GameObject currentRoom;
 
     void OnEnable() {
