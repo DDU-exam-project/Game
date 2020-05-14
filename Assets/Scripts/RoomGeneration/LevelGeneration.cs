@@ -70,7 +70,7 @@ public class LevelGeneration : MonoBehaviour {
 		taken.Add(Vector2.zero);
 		rooms[size, size] = new Room(Vector2.zero, 1);
 		Vector2 current = Vector2.zero;
-		for (int i = 1; i < size; i++)
+		for (int i = 1; i < size - 1; i++)
 		{
 			if (Mathf.Abs(current.y) > size * denistyConstant | Mathf.Abs(current.y) > size * denistyConstant)
 			{
