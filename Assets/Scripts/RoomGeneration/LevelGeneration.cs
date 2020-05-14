@@ -65,7 +65,7 @@ public class LevelGeneration : MonoBehaviour {
 		int x;
 		int y;
 		rooms = new Room[size * 2, size * 2];
-		Vector2 direct = new Vector2(-1, -1);
+		Vector2 direct = new Vector2(0, 1);
 		List<Vector2> taken = new List<Vector2>(size);
 		taken.Add(Vector2.zero);
 		rooms[size, size] = new Room(Vector2.zero, 1);
@@ -91,8 +91,8 @@ public class LevelGeneration : MonoBehaviour {
 					}
 				}
 			}
-			x = Mathf.RoundToInt(20 + current.x);
-			y = Mathf.RoundToInt(20 + current.y);
+			x = Mathf.RoundToInt(size + current.x);
+			y = Mathf.RoundToInt(size + current.y);
 			rooms[x, y] = new Room(current, 1);
 			taken.Add(current);
 		}		
