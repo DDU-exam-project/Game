@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public class PlayerScript : CharacterScript
+﻿public class PlayerScript : CharacterScript
 {
     PlayerMovement movementScript;
     public bool canTeleport = true;

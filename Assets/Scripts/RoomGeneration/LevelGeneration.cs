@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
 using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour {
@@ -101,7 +99,7 @@ public class LevelGeneration : MonoBehaviour {
 		Vector2 direct = new Vector2(-1, -1);
 		List<Vector2> taken = new List<Vector2>(size);
 		taken.Add(Vector2.zero);
-		rooms[20, 20] = new Room(Vector2.zero, 1);
+		rooms[size, size] = new Room(Vector2.zero, 1);
 		Vector2 current = Vector2.zero;
 		for (int i = 1; i < size; i++)
 		{
@@ -128,20 +126,7 @@ public class LevelGeneration : MonoBehaviour {
 			y = Mathf.RoundToInt(20 + current.y);
 			rooms[x, y] = new Room(current, 1);
 			taken.Add(current);
-		}
-		/*
-		string printing = "{";
-		for (int i = 0; i < size; i++)
-		{
-			printing += "(" + taken[i].x.ToString() + ", " + taken[i].y.ToString() + ")";
-			if (i != size - 1)
-			{
-				printing += ",";
-			}
-		}
-		printing += "}";
-		Debug.Log(printing);
-		*/
+		}		
 	}
 
 	void SetRoomDoors(){

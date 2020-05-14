@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class OnTriggerMoveTo : MonoBehaviour
 {
@@ -55,10 +53,7 @@ public class OnTriggerMoveTo : MonoBehaviour
                     room.SetActive(true);
 
                     currentRoom = room;
-
-                    Debug.Log(roomPosition);
-                    Debug.Log(roomPosition + temp);
-                    Debug.Log(newDoor);
+                    
                     PlayerScript.player.teleportResetTimer();
                     collision.gameObject.transform.position = room.transform.Find(newDoor).position;
                     break;
