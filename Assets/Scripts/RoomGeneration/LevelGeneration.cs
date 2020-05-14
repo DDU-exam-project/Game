@@ -2,8 +2,6 @@
 using UnityEngine;
 
 public class LevelGeneration : MonoBehaviour {
-    List<GameObject> roomGameObjects;
-    List<Vector2> takenPositions = new List<Vector2>();
     [SerializeField] int roomSize;
 	int size = 20;
 	float denistyConstant = 0.1f;
