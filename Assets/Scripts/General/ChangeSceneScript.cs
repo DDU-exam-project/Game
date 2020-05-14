@@ -11,6 +11,7 @@ public class ChangeSceneScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             SceneManager.LoadScene(sceneToGoTo);
+            PlayerScript.player.transform.position = Vector3.zero;
         }
     }
 }
