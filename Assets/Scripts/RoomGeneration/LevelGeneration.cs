@@ -24,7 +24,7 @@ public class LevelGeneration : MonoBehaviour {
 	}
 	void CreateRooms(){
 		//setup
-		rooms = new Room[gridSizeX * 2,gridSizeY * 2];
+		rooms = new Room[gridSizeX * 2, gridSizeY * 2];
 		rooms[gridSizeX, gridSizeY] = new Room(Vector2.zero, 1);
 		takenPositions.Insert(0, Vector2.zero);
 		Vector2 checkPos = Vector2.zero;
@@ -145,8 +145,11 @@ public class LevelGeneration : MonoBehaviour {
 			{
                 if (roomTemplate.CompareTag(room.tag))
                 {
-                    roomTemplate.GetComponentInChildren<OnTriggerMoveTo>().roomPosition = room.gridPos;
-                    roomTemplate.GetComponent<GridPosition>().gridPos = room.gridPos;
+					foreach (OnTriggerMoveTo comp in roomTemplate.GetComponentsInChildren<OnTriggerMoveTo>())
+					{
+						comp.roomPosition = room.gridPos;
+					}
+					roomTemplate.GetComponent<GridPosition>().gridPos = room.gridPos;
                     Instantiate(roomTemplate, drawPos, Quaternion.identity);
                 }
             }

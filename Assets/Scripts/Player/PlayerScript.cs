@@ -3,6 +3,7 @@
 public class PlayerScript : CharacterScript
 {
     PlayerMovement movementScript;
+    public bool canTeleport = true;
 
     public static PlayerScript player;
     private void Awake()
@@ -23,6 +24,16 @@ public class PlayerScript : CharacterScript
         movementScript = GetComponent<PlayerMovement>();
     }
     
+    public void teleportResetTimer()
+    {
+        canTeleport = false;
+        Invoke("teleportReset", 5.0f);
+    }
+
+    private void teleportReset()
+    {
+        canTeleport = true;
+    }
 
     override
     public void TakeDamage(int amount)

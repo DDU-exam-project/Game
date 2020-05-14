@@ -22,7 +22,7 @@ public class OnTriggerMoveTo : MonoBehaviour
         {
             rooms[i] = GridPositions[i].gameObject;
         }
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") & PlayerScript.player.canTeleport)
         {
             switch (tag)
             {
@@ -49,7 +49,10 @@ public class OnTriggerMoveTo : MonoBehaviour
             {
                 if (room.GetComponent<GridPosition>().gridPos == roomPosition + temp)
                 {
+                    Debug.Log(roomPosition);
+                    Debug.Log(roomPosition + temp);
                     Debug.Log(newDoor);
+                    PlayerScript.player.teleportResetTimer();
                     collision.gameObject.transform.position = room.transform.Find(newDoor).position;
                 }
             }
