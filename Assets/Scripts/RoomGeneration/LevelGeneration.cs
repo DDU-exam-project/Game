@@ -104,7 +104,6 @@ public class LevelGeneration : MonoBehaviour {
 				if (rooms[x,y] == null){
 					continue;
 				}
-				Vector2 gridPosition = new Vector2(x,y);
 				if (y - 1 < 0){ //check above
 					rooms[x,y].doorBot = false;
 				}else{
